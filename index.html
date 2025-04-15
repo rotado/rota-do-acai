@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rota do Açaí</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #5E3C1E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            margin: 0;
+        }
+        section {
+            padding: 20px;
+        }
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .product {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .product img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .cta {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #FF9800;
+            color: white;
+            font-size: 1.4em;
+        }
+        .cta img {
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .payment-section {
+            background-color: #fff;
+            padding: 30px 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .payment-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .payment-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .payment-section input, .payment-section select, .payment-section button {
+            padding: 10px;
+            font-size: 1em;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        .qr-code {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            width: 200px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Rota do Açaí</h1>
+    <p>O melhor açaí para sua energia e bem-estar!</p>
+</header>
+
+<section>
+    <h2>Produtos</h2>
+    <div class="products">
+        <div class="product">
+            <img src="acai1.jpg" alt="Açaí Tradicional">
+            <h3>Açaí Tradicional</h3>
+            <p>Delicioso e natural, o açaí mais saboroso.</p>
+        </div>
+        <div class="product">
+            <img src="acai2.jpg" alt="Açaí com Frutas">
+            <h3>Açaí com Frutas</h3>
+            <p>Açaí com a combinação perfeita de frutas frescas.</p>
+        </div>
+        <div class="product">
+            <img src="acai3.jpg" alt="Açaí e Granola">
+            <h3>Açaí e Granola</h3>
+            <p>Para quem ama crocância junto com o açaí!</p>
+        </div>
+    </div>
+</section>
+
+<div class="cta">
+    <p><strong>Pague 1, leve 2!</strong><br>
+    Duas delícias de 700ml recheadas com morango, Nutella, chantilly e disquete.<br>
+    Só na <strong>Rota do Açaí</strong>! 🍓🍫✨</p>
+    <img src="promocao-2-copos.png" alt="Promoção Pague 1 Leve 2 - Rota do Açaí">
+</div>
+
+<section class="payment-section">
+    <h2>Pagamento via Pix</h2>
+    <form id="paymentForm">
+        <input type="text" placeholder="Nome completo" required>
+        <input type="text" placeholder="CPF" required>
+        <select required>
+            <option value="">Selecione um produto</option>
+            <option value="acai700">Combo 2 Açaís 700ml - R$24,90</option>
+            <option value="acai500">Açaí 500ml - R$14,90</option>
+        </select>
+        <button type="submit">Gerar QR Code</button>
+    </form>
+    <div class="qr-code" id="qrCode">
+        <p>Escaneie o QR Code abaixo para pagar com Pix:</p>
+        <img src="qrcode-pix-exemplo.png" alt="QR Code Pix">
+    </div>
+</section>
+
+<footer>
+    <p>Rota do Açaí | Endereço | Contato | Redes Sociais</p>
+</footer>
+
+<script>
+    const form = document.getElementById('paymentForm');
+    const qrCode = document.getElementById('qrCode');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        qrCode.style.display = 'block';
+        qrCode.scrollIntoView({ behavior: 'smooth' });
+    });
+</script>
+
+</body>
+</html>
